@@ -10,17 +10,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Quiz> quizs = [
     Quiz.fromMap({
-      'title': 'test',
+      'title': '메롱',
       'candidates': ['a', 'b', 'c', 'd'],
       'answer': 0
     }),
     Quiz.fromMap({
-      'title': 'test',
+      'title': '메로옹',
       'candidates': ['a', 'b', 'c', 'd'],
       'answer': 0
     }),
     Quiz.fromMap({
-      'title': 'test',
+      'title': '메로오옹',
       'candidates': ['a', 'b', 'c', 'd'],
       'answer': 0
     }),
