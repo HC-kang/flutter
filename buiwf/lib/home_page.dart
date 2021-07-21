@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
     Logger().d(text);
 
     setState(() {
-      ChatMessage newChat = ChatMessage(text);
+      ChatMessage newChat = ChatMessage();
       _chats.add(newChat);
     });
 

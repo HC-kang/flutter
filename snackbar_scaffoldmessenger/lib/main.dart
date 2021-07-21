@@ -88,14 +88,14 @@ class ThirdPage extends StatelessWidget {
           appBar: AppBar(
             title: Text('Third Page'),
           ),
-          body: Builder(
-            builder:(context){,
+          body: Builder(builder: (context) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('좋아요를 취소 하시겠습니까?.',
-                      style: TextStyle(fontSize: 20.0, color: Colors.redAccent)),
+                      style:
+                          TextStyle(fontSize: 20.0, color: Colors.redAccent)),
                   ElevatedButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -110,9 +110,7 @@ class ThirdPage extends StatelessWidget {
                 ],
               ),
             );
-          }
-        )
-      ),
+          })),
     );
   }
 }

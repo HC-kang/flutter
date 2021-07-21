@@ -34,7 +34,7 @@ class _HelloPageState extends State<HelloPage> {
   @override
   Widget build(BuildContext context) {
     return Text(
-      widget.title,
+      widget.title!,
     );
   }
 }

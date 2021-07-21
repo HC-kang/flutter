@@ -25,7 +25,7 @@ class ChatMessage extends StatelessWidget {
                   'ID or Name',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text(txt),
+                Text(txt!),
               ],
             ),
           ),
