@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       color: Colors.deepPurple,
                       onPressed: () {
-                        _scaffoldKey.currentState!.showSnackBar(
+                        _scaffoldKey.currentState?.showSnackBar(
                           SnackBar(
                             content: Row(
                               children: <Widget>[
