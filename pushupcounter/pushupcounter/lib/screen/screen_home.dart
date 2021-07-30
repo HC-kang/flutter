@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 width: width * 0.6,
                 height: height * 0.06,
-                child: RaisedButton(
+                child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute<Null>(
@@ -93,7 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     );
                   },
-                  color: Colors.black54,
+                  style: ElevatedButton.styleFrom(primary: Colors.black54),
+                  // color: Colors.black54,
                   child: Icon(
                     Icons.party_mode,
                     color: Colors.white,
@@ -109,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: height * 0.06,
                 child: SizedBox(
                   width: double.infinity, // <-- match_parent
-                  child: RaisedButton(
+                  child: ElevatedButton(
                     child: const Text(
                       '사용법',
                       style: TextStyle(
@@ -118,7 +119,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    color: Colors.black54,
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.black54,
+                    ),
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute<Null>(
