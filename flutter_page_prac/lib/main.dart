@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(
@@ -15,7 +16,7 @@ void main() {
         '/second': (context) => Page1(),
         '/third': (context) => Page2(),
         '/forth': (context) => Page3(),
-        '/fifth': (context) => Page4(),
+        '/fifth': (context) => Page4Widget(),
       },
     ),
   );
@@ -51,6 +52,14 @@ class FirstScreen extends StatelessWidget {
               onPressed: () {
                 // Named route를 사용하여 두 번째 화면으로 전환합니다.
                 Navigator.pushNamed(context, '/forth');
+              },
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: Colors.red),
+              child: Text('Page4'),
+              onPressed: () {
+                // Named route를 사용하여 두 번째 화면으로 전환합니다.
+                Navigator.pushNamed(context, '/fifth');
               },
             ),
           ],
@@ -152,5 +161,54 @@ class Page3 extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class Page4Widget extends StatefulWidget {
+  const Page4Widget({Key? key}) : super(key: key);
+
+  @override
+  _Page4WidgetState createState() => _Page4WidgetState();
+}
+
+class _Page4WidgetState extends State<Page4Widget> {
+  String http1 = "hiii";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text('$http1'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                icon: Icon(Icons.play_circle_fill, size: 60),
+                onPressed: () async {
+                  var url = Uri.parse('http://localhost:8080/greeting');
+                  http.Response response = await http.get(url);
+                  try {
+                    if (response.statusCode == 200) {
+                      String data = response.body;
+                      http1 = data;
+                      setState(() {});
+                    } else {}
+                  } catch (e) {}
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.photo_album, size: 60),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          )
+        ],
+      ),
+    ));
   }
 }

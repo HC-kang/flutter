@@ -268,6 +268,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.2"
+  tflite:
+    dependency: "direct dev"
+    description:
+      name: tflite
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
   typed_data:
     dependency: transitive
     description:

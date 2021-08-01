@@ -38,6 +38,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   camera:
+  tflite:
   path_provider:
   path:
 
@@ -65,6 +66,7 @@ flutter:
     - images/pushups.jpeg
     - images/woman_pushup.jpeg
     - images/pushup_skeleton.png
+    - assets/
 
   #   - images/a_dot_ham.jpeg
 

@@ -1,8 +1,13 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:pushupcounter/screen/screen_home.dart';
+import 'package:pushupcounter/screen/home.dart';
 
-void main() {
-  runApp(MyApp());
+List<CameraDescription>? cameras;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
