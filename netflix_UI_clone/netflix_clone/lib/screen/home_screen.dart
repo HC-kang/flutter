@@ -17,21 +17,27 @@ class _HomeScreenState extends State<HomeScreen> {
       'like': false,
     }),
     Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie_1.png',
+      'title': '보헤미안 랩소디',
+      'keyword': '음악/드라마/인물',
+      'poster': 'test_movie_2.jpeg',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': '포레스트 검프',
+      'keyword': '드라마/외국',
+      'poster': 'test_movie_3.jpeg',
       'like': false,
     }),
     Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie_1.png',
+      'title': '쇼생크 탈출',
+      'keyword': '추리/반전/서스펜스',
+      'poster': 'test_movie_4.jpeg',
       'like': false,
     }),
     Movie.fromMap({
-      'title': '사랑의 불시착',
-      'keyword': '사랑/로맨스/판타지',
-      'poster': 'test_movie_1.png',
+      'title': '라이언 일병 구하기',
+      'keyword': '드라마/전쟁/역사',
+      'poster': 'test_movie_5.jpg',
       'like': false,
     })
   ];
