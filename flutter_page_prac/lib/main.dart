@@ -188,7 +188,7 @@ class _Page4WidgetState extends State<Page4Widget> {
               IconButton(
                 icon: Icon(Icons.play_circle_fill, size: 60),
                 onPressed: () async {
-                  var url = Uri.parse('http://localhost:8080/greeting');
+                  var url = Uri.parse('http://192.168.0.4:8080/mybatis');
                   http.Response response = await http.get(url);
                   try {
                     if (response.statusCode == 200) {
