@@ -4,6 +4,8 @@ import 'package:pushupcounter/main.dart';
 import 'package:pushupcounter/screen/screen_camera.dart';
 import 'package:pushupcounter/screen/screen_explain.dart';
 
+import '../pushed_pageA.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -37,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //         fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
       //   ),
       // ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -84,16 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: height * 0.06,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<Null>(
-                        fullscreenDialog: true,
-                        builder: (BuildContext context) {
-                          return CameraScreen();
-                        },
-                      ),
-                    );
+                    onSelectA(context: context, modelName: 'posenet');
                   },
-                  style: ElevatedButton.styleFrom(primary: Colors.black54),
+                  style: ElevatedButton.styleFrom(primary: Colors.black26),
                   // color: Colors.black54,
                   child: Icon(
                     Icons.party_mode,
@@ -120,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.black54,
+                      primary: Colors.black26,
                     ),
                     onPressed: () {
                       Navigator.of(context).push(
@@ -141,4 +136,16 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+
+void onSelectA({BuildContext? context, String? modelName}) async {
+  Navigator.push(
+    context!,
+    MaterialPageRoute(
+      builder: (context) => PushedPageA(
+        cameras: cameras!,
+        title: modelName!,
+      ),
+    ),
+  );
 }

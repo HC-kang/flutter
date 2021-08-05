@@ -22,6 +22,7 @@ class _ExplainScreenState extends State<ExplainScreen> {
     double width = screenSize.width;
     double height = screenSize.height;
     return Scaffold(
+      backgroundColor: Colors.grey,
       body: Container(
         child: SafeArea(
           child: Column(
