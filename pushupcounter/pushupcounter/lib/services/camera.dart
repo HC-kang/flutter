@@ -48,7 +48,7 @@ class _CameraState extends State<Camera> {
               }).toList(),
               imageHeight: img.height,
               imageWidth: img.width,
-              //numResults: 2,
+              // numResults: 2,
               numResults: 1,
               rotation: -90,
               threshold: 0.1,

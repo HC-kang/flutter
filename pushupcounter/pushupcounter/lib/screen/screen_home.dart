@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:pushupcounter/main.dart';
 import 'package:pushupcounter/screen/screen_camera.dart';
 import 'package:pushupcounter/screen/screen_explain.dart';
+import 'package:pushupcounter/widget/navigation_drawer.dart';
 
 import '../pushed_pageA.dart';
 
@@ -30,6 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
     void getServerText() {}
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      drawer: NavigationDrawerWidget(),
       // appBar: AppBar(
       //   centerTitle: true,
       //   backgroundColor: Colors.black87,
@@ -46,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             children: [
               Container(
-                height: 160,
+                height: 80,
               ),
               Container(
                 child: Column(
@@ -54,13 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       'AI 체력 검정 어플리케이션',
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       '(Push-Up)',
-                      style: TextStyle(fontSize: 23),
+                      style: TextStyle(fontSize: 25),
                     ),
                   ],
                 ),
