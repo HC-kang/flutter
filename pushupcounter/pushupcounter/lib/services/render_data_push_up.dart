@@ -24,13 +24,20 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
   bool midCount = false;
   bool isCorrectPosture = false;
   int _counter = 0;
-  Color? correctColor;
-  double? shoulderLY;
-  double? shoulderRY;
 
-  double? wristLX, wristLY, wristRX, wristRY, elbowLX, elbowRX;
-  double? kneeRY;
-  double? kneeLY;
+  Color? correctColor;
+  double shoulderLY = 0;
+  double shoulderRY = 0;
+
+  // double? wristLX, wristLY, wristRX, wristRY, elbowLX, elbowRX = 0;
+  double wristLX = 0;
+  double wristLY = 0;
+  double wristRX = 0;
+  double wristRY = 0;
+  double elbowLX = 0;
+  double elbowRX = 0;
+  double kneeRY = 0;
+  double kneeLY = 0;
   bool pushUp = true;
   String whatToDo = 'Finding Posture';
 
@@ -51,16 +58,8 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
 
   @override
   void initState() {
-    inputArr = new Map();
-    midCount = false;
-    isCorrectPosture = false;
-    _counter = 0;
+    inputArr = Map();
     correctColor = Colors.red;
-    shoulderLY = 0;
-    shoulderRY = 0;
-    kneeRY = 0;
-    kneeLY = 0;
-    pushUp = true;
     super.initState();
   }
 
@@ -80,16 +79,16 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
     });
     if (excercise == 'Push Up') {
       if (pushUp) {
-        return wristLX! > 280 &&
-            elbowLX! > 280 &&
-            wristRX! < 95 &&
-            elbowRX! < 95 &&
-            wristLY! < 240 &&
-            wristLY! > 200 &&
-            wristRY! < 240 &&
-            wristRY! > 200;
+        return wristLX > 280 &&
+            elbowLX > 280 &&
+            wristRX < 95 &&
+            elbowRX < 95 &&
+            wristLY < 240 &&
+            wristLY > 200 &&
+            wristRY < 240 &&
+            wristRY > 200;
       } else {
-        return wristLY! < 125 && wristRY! < 125;
+        return wristLY < 125 && wristRY < 125;
       }
     }
   }

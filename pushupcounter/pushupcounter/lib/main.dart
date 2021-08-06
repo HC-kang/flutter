@@ -1,7 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:pushupcounter/screen/screen_home.dart';
-import 'package:pushupcounter/screen/home.dart';
+import 'package:pushupcounter/screen/%5B-%5Dhome.dart';
 
 List<CameraDescription>? cameras;
 void main() async {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pushupcounter/main.dart';
-import 'package:pushupcounter/screen/screen_camera.dart';
+import 'package:pushupcounter/screen/%5B-%5Dscreen_camera.dart';
 import 'package:pushupcounter/screen/screen_explain.dart';
 import 'package:pushupcounter/widget/navigation_drawer.dart';
 
-import '../pushed_pageA.dart';
+import '../pushed_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black54,
       ),
       drawer: NavigationDrawerWidget(),
       // appBar: AppBar(
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'AI 체력 검정 어플리케이션',
+                      '평가관',
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,

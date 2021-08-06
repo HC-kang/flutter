@@ -4,7 +4,6 @@ import 'package:tflite/tflite.dart';
 import 'dart:math';
 
 import 'package:pushupcounter/services/camera.dart';
-import 'package:pushupcounter/services/render_data.dart';
 import 'package:pushupcounter/services/render_data_push_up.dart';
 
 class PushedPageA extends StatefulWidget {
