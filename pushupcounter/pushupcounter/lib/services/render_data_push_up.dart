@@ -34,12 +34,12 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
   double wristLY = 0;
   double wristRX = 0;
   double wristRY = 0;
-  double elbowLX = 0;
-  double elbowRX = 0;
+  double shoulderLX = 0;
+  double shoulderRX = 0;
   double kneeRY = 0;
   double kneeLY = 0;
   bool pushUp = true;
-  String whatToDo = 'Finding Posture';
+  String whatToDo = '자세 확인 중...';
 
   var leftEyePos = Vector(0, 0);
   var rightEyePos = Vector(0, 0);
@@ -59,7 +59,7 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
   @override
   void initState() {
     inputArr = Map();
-    correctColor = Colors.red;
+    correctColor = Colors.grey;
     super.initState();
   }
 
@@ -69,8 +69,8 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
       wristLY = poses['leftWrist']![1];
       wristRX = poses['rightWrist']![0];
       wristRY = poses['rightWrist']![1];
-      elbowLX = poses['leftElbow']![0];
-      elbowRX = poses['rightElbow']![0];
+      shoulderLX = poses['leftShoulder']![0];
+      shoulderRX = poses['rightShoulder']![0];
 
       shoulderLY = poses['leftShoulder']![1];
       shoulderRY = poses['rightShoulder']![1];
@@ -79,18 +79,33 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
     });
     if (excercise == 'Push Up') {
       if (pushUp) {
-        return wristLX > 280 &&
-            elbowLX > 280 &&
-            wristRX < 95 &&
-            elbowRX < 95 &&
-            wristLY < 240 &&
-            wristLY > 200 &&
-            wristRY < 240 &&
-            wristRY > 200;
+        return wristLX < 110 &&
+            wristRX < 110 &&
+            shoulderLX > 250 &&
+            shoulderRX > 250;
+        // wristLY < 240 &&
+        // wristLY > 200 &&
+        // wristRY < 240 &&
+        // wristRY > 200;
       } else {
         return wristLY < 125 && wristRY < 125;
       }
     }
+    // if (excercise == 'Push Up') {
+    //   if (pushUp) {
+    //     return
+    //         wristLX > 280 &&
+    //         wristRX < 95 &&
+    //         elbowLX > 280 &&
+    //         elbowRX < 95 &&
+    //         wristLY < 240 &&
+    //         wristLY > 200 &&
+    //         wristRY < 240 &&
+    //         wristRY > 200;
+    //   } else {
+    //     return wristLY < 125 && wristRY < 125;
+    //   }
+    // }
   }
 
   _checkCorrectPosture(Map<String, List<double>> poses) {
@@ -115,8 +130,7 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
     if (poses != null) {
       _checkCorrectPosture(poses);
 
-      if (isCorrectPosture && pushUp && midCount == false) {
-        //in correct initial posture
+      if (isCorrectPosture && !pushUp && midCount == false) {
         setState(() {
           whatToDo = 'Push';
           //correctColor = Colors.green;
@@ -125,18 +139,16 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
         isCorrectPosture = false;
       }
 
-      //lowered all the way
       if (isCorrectPosture && !pushUp && midCount == false) {
         midCount = true;
         isCorrectPosture = false;
         pushUp = !pushUp;
         setState(() {
-          whatToDo = 'Drop';
+          whatToDo = 'Down';
           //correctColor = Colors.green;
         });
       }
 
-      //back up
       if (midCount && isCorrectPosture) {
         incrementCounter();
         midCount = false;
@@ -266,7 +278,8 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
               child: Text(
                 "● ${k["part"]}",
                 style: TextStyle(
-                  color: Color.fromRGBO(37, 213, 253, 1.0),
+                  color: Colors.redAccent,
+                  // color: Color.fromRGBO(37, 213, 253, 1.0),
                   fontSize: 12.0,
                 ),
               ),
@@ -331,19 +344,21 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 70,
-            width: widget.screenW,
+            height: 50,
+            width: widget.screenW * 0.5,
             decoration: BoxDecoration(
               color: correctColor,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25),
-                topRight: Radius.circular(25),
+                topLeft: Radius.circular(5),
+                topRight: Radius.circular(5),
+                bottomLeft: Radius.circular(5),
+                bottomRight: Radius.circular(5),
               ),
             ),
             child: Column(
               children: [
                 Text(
-                  '$whatToDo\nPush ups: ${_counter.toString()} \n ${isCorrectPosture} / ${midCount} / ${pushUp}',
+                  '$whatToDo\nPush ups: ${_counter.toString()}',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -369,8 +384,8 @@ class MyPainter extends CustomPainter {
     final p1 = Offset(left.x, left.y);
     final p2 = Offset(right.x, right.y);
     final paint = Paint()
-      ..color = Colors.blue
-      ..strokeWidth = 4;
+      ..color = Colors.green
+      ..strokeWidth = 3;
     canvas.drawLine(p1, p2, paint);
   }
 

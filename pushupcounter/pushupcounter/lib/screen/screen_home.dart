@@ -31,9 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     void getServerText() {}
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black54,
-      ),
+      appBar: AppBar(backgroundColor: Colors.grey),
       drawer: NavigationDrawerWidget(),
       // appBar: AppBar(
       //   centerTitle: true,
@@ -44,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //         fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
       //   ),
       // ),
-      backgroundColor: Colors.grey,
+      backgroundColor: Color.fromRGBO(140, 140, 140, 1.0),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -57,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Text(
-                      '평가관',
+                      '감독관',
                       style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 45,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

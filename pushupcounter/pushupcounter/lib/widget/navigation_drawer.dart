@@ -19,9 +19,10 @@ class NavigationDrawerWidget extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.black87),
+              decoration: BoxDecoration(color: Color.fromRGBO(50, 50, 50, 1.0)),
               child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.black87),
+                decoration:
+                    BoxDecoration(color: Color.fromRGBO(50, 50, 50, 1.0)),
                 accountName: Text(
                   'Yuna Kim',
                   style: (TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
