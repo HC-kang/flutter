@@ -31,7 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
     void getServerText() {}
 
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.grey),
+      appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.grey),
       drawer: NavigationDrawerWidget(),
       // appBar: AppBar(
       //   centerTitle: true,

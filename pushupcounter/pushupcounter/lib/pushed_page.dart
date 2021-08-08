@@ -48,8 +48,10 @@ class _PushedPageAState extends State<PushedPageA> {
     Size screen = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         title: Text(
           'Pushup Counter',
+          style: TextStyle(color: Colors.black),
           textAlign: TextAlign.end,
         ),
         backgroundColor: Colors.grey,

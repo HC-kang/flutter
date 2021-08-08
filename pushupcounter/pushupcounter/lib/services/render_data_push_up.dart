@@ -343,26 +343,35 @@ class _RenderDataPushUpState extends State<RenderDataPushUp> {
         Stack(children: _renderKeypoints()),
         Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 50,
-            width: widget.screenW * 0.5,
-            decoration: BoxDecoration(
-              color: correctColor,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5),
-                topRight: Radius.circular(5),
-                bottomLeft: Radius.circular(5),
-                bottomRight: Radius.circular(5),
-              ),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  '$whatToDo\nPush ups: ${_counter.toString()}',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                height: 50,
+                width: widget.screenW * 0.5,
+                decoration: BoxDecoration(
+                  color: correctColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(300),
+                    topRight: Radius.circular(300),
+                    bottomLeft: Radius.circular(300),
+                    bottomRight: Radius.circular(300),
+                  ),
                 ),
-              ],
-            ),
+                child: Column(
+                  children: [
+                    Text(
+                      '$whatToDo\nPush ups: ${_counter.toString()}',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 10,
+              )
+            ],
           ),
         ),
       ],
